@@ -1,0 +1,6 @@
+include README.md LICENSE LICENSING.md NOTICE.md CONTRIBUTING.md SECURITY.md
+include SOURCE_PROVENANCE.json release-files.json
+include docs/USAGE.md docs/RELEASING.md
+include scripts/check_repository.py scripts/check_distribution.py
+include tests/test_artifacts.py tests/test_cli.py tests/test_demo.py tests/test_glb.py tests/test_distribution.py
+global-exclude *.pyc

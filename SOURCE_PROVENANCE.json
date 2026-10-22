@@ -1,0 +1,120 @@
+{
+  "source_repository": "https://github.com/MatteoPhan926/CVPR_3D",
+  "source_commit": "75efa136da5636c371d60aed1373a48e87a902b0",
+  "source_commit_publication": "Not assumed public; retained in the original local repository",
+  "files": {
+    ".gitattributes": {
+      "source_path": "publication/toolkit/.gitattributes",
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    ".github/ISSUE_TEMPLATE/bug_report.md": {
+      "source_path": "publication/toolkit/.github/ISSUE_TEMPLATE/bug_report.md",
+      "sha256": "9762461a0c7a0aea769fe7916fb9df2e6087ea5ccf6e70fdc0701777f4f813c9"
+    },
+    ".github/dependabot.yml": {
+      "source_path": ".github/dependabot.yml",
+      "sha256": "b69145d17fec231f5e60ba82ac7f1e2700a01fcb1fecaec860c67f0a414a027d"
+    },
+    ".github/workflows/checks.yml": {
+      "source_path": "publication/toolkit/.github/workflows/checks.yml",
+      "sha256": "d405ac724e86cdb99cc2d42232e43f255e9a097f2231294fb9edfe079c5afd91"
+    },
+    ".gitignore": {
+      "source_path": ".gitignore",
+      "sha256": "b9dfc979c1666e8092e9c2e0dde5ab51c5d435f3968e63e0e2d1c81d1575485d"
+    },
+    "AGENTS.md": {
+      "source_path": "publication/toolkit/AGENTS.md",
+      "sha256": "30848c98e38fc7a1f939430b04affa1aa77b36270f90677a6f9f963cbbb69fe2"
+    },
+    "CONTRIBUTING.md": {
+      "source_path": "publication/toolkit/CONTRIBUTING.md",
+      "sha256": "d5c621aeeecae73efde0281f655749b41cb6bc09dc98c43ed68a59a9086a26da"
+    },
+    "LICENSE": {
+      "source_path": "LICENSE",
+      "sha256": "17844a4922ea91b6a3eeb4bda50f32e515c955efcbd1738989c9a83edc59856c"
+    },
+    "LICENSING.md": {
+      "source_path": "publication/toolkit/LICENSING.md",
+      "sha256": "d3550fe43b3d7ca05409e68f710cbfab266059eb5606d156bcff46f648a67621"
+    },
+    "MANIFEST.in": {
+      "source_path": "publication/toolkit/MANIFEST.in",
+      "sha256": "c2c0e67a0438c04dc7a6bd533ffe41eb9e7526af6a56d22e446634ac37a50ddf"
+    },
+    "NOTICE.md": {
+      "source_path": "publication/toolkit/NOTICE.md",
+      "sha256": "dbf83a4992534afe045161fb34513df026826841f252a57dae3fa9f4d27737a0"
+    },
+    "README.md": {
+      "source_path": "publication/toolkit/README.md",
+      "sha256": "7faedc25c041fb550a663906445beff34267180025a393abfb6f4a07b74e2f2f"
+    },
+    "SECURITY.md": {
+      "source_path": "publication/toolkit/SECURITY.md",
+      "sha256": "3e2884c73c73d6f1ddc7c472049306a91d12041e48fcebc9ebe3787606157a2b"
+    },
+    "cvpr3d/__init__.py": {
+      "source_path": "cvpr3d/__init__.py",
+      "sha256": "ae07da117982f3d873acb39b4b1717ea65b1a9c16f34ff7af77f72a11daa2a75"
+    },
+    "cvpr3d/__main__.py": {
+      "source_path": "cvpr3d/__main__.py",
+      "sha256": "f11a7bbf040f2e2e1726972fdf6fe32b7aa7e5f49b4702fecce386ccadf3277c"
+    },
+    "cvpr3d/artifacts.py": {
+      "source_path": "cvpr3d/artifacts.py",
+      "sha256": "0dc924f9c6a981986767bf841c320a9a930ab14435af222fd2505537c5674c52"
+    },
+    "cvpr3d/demo.py": {
+      "source_path": "cvpr3d/demo.py",
+      "sha256": "74f198c7aff66983f0c177d7fc23e118549fdb0f6ec5bd29e9c433571c0c0694"
+    },
+    "cvpr3d/glb.py": {
+      "source_path": "cvpr3d/glb.py",
+      "sha256": "36d791a87f4e9fed5e530d313f25079b9df92cb38591e0c8d569841b3f6d960f"
+    },
+    "docs/RELEASING.md": {
+      "source_path": "publication/toolkit/docs/RELEASING.md",
+      "sha256": "72d26f2e6fcc62a20c650873edefdf27d56fafbfd2cc0335dbcd774b54b97953"
+    },
+    "docs/USAGE.md": {
+      "source_path": "publication/toolkit/docs/USAGE.md",
+      "sha256": "8ff58ab7fee19cae711a911d6ac5283bbd439ea706a54bad1e206de2578d15a0"
+    },
+    "pyproject.toml": {
+      "source_path": "publication/toolkit/pyproject.toml",
+      "sha256": "4eb5d5701b85ae6d6f3fbf9f9a4fd5431e1b278871645947da0a878d625a6ad6"
+    },
+    "scripts/check_distribution.py": {
+      "source_path": "publication/toolkit/scripts/check_distribution.py",
+      "sha256": "7df7c8b4d6322a6294c68ba7caf7646f028cfa667900e03b396800b6bdd7e7d0"
+    },
+    "scripts/check_repository.py": {
+      "source_path": "publication/toolkit/scripts/check_repository.py",
+      "sha256": "25c7b6ee6c67060d4a1e84aa92c5e89cb7646716686f690d9aab7d6c5bb58905"
+    },
+    "tests/test_artifacts.py": {
+      "source_path": "tests/test_artifacts.py",
+      "sha256": "438afcc7273dfe03c41c8d537c38dbe0b857ca3f64f5cb5bbe7e0b46834878a2"
+    },
+    "tests/test_cli.py": {
+      "source_path": "tests/test_cli.py",
+      "sha256": "a1b78bff5d9a9a206956141b904036fd5d97460c7491cc1f78394313d673329e"
+    },
+    "tests/test_demo.py": {
+      "source_path": "tests/test_demo.py",
+      "sha256": "b177a53c140a05c70889ebc77a42c5d98b95542068748cd5291754452d741079"
+    },
+    "tests/test_distribution.py": {
+      "source_path": "publication/toolkit/tests/test_distribution.py",
+      "sha256": "9439cbe4f67968ca9d472183b071f5cdef77f0f25cfa6497749897163382dc48"
+    },
+    "tests/test_glb.py": {
+      "source_path": "tests/test_glb.py",
+      "sha256": "98d923c60bc369d8ee9ae20ce6e579fd337177d3128d2eb453c23c065f6a30d8"
+    }
+  },
+  "scope": "Import receipt only. No historical assets, source bundles, Git objects or additional license grants."
+}
