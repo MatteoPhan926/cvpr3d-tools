@@ -24,6 +24,19 @@ DIST_INFO = {'METADATA', 'WHEEL', 'RECORD', 'entry_points.txt', 'top_level.txt',
              'licenses/LICENSE', 'licenses/LICENSING.md', 'licenses/NOTICE.md'}
 EGG_INFO = {'PKG-INFO', 'SOURCES.txt', 'dependency_links.txt', 'entry_points.txt', 'top_level.txt'}
 
+# Run in the child interpreter so we check its actual import, not this checkout.
+# Resolve both sides: Windows TEMP/cwd may use an 8.3 alias such as RUNNER~1.
+# An explicit failure keeps this gate active even with PYTHONOPTIMIZE enabled.
+IMPORT_ORIGIN_CHECK = '''
+import sys
+from pathlib import Path
+import cvpr3d
+actual = Path(cvpr3d.__file__).resolve(strict=True)
+expected = Path(sys.argv[1]).resolve(strict=True)
+if not actual.is_relative_to(expected):
+    raise SystemExit(f"Imported cvpr3d from {actual}; expected a file under {expected}")
+'''
+
 
 def validate_names(names, expected):
     if len(names) != len(set(n.casefold() for n in names)) or set(names) != set(expected):
@@ -91,7 +104,7 @@ def verify_sdist(path, version, root=ROOT):
 def smoke(wheel, contents):
     environment = {k: v for k, v in os.environ.items() if k not in ('PYTHONPATH', 'PYTHONHOME')}
     with tempfile.TemporaryDirectory(prefix='cvpr3d-release-') as directory:
-        root = Path(directory)
+        root = Path(directory).resolve(strict=True)
         venv.EnvBuilder(with_pip=True).create(root / 'venv')
         binary = root / 'venv' / ('Scripts' if os.name == 'nt' else 'bin')
         python = binary / ('python.exe' if os.name == 'nt' else 'python')
@@ -103,7 +116,7 @@ def smoke(wheel, contents):
                 raise ValueError(result.stdout + result.stderr)
             return result
         run([python, '-I', '-m', 'pip', 'install', '--no-index', '--no-deps', wheel])
-        run([python, '-I', '-c', 'import cvpr3d,sys; from pathlib import Path; assert Path(cvpr3d.__file__).is_relative_to(Path(sys.prefix))'])
+        run([python, '-I', '-c', IMPORT_ORIGIN_CHECK, root / 'venv'])
         run([cli, '--version'])
         panel = root / 'panel.glb'
         run([python, '-I', '-m', 'cvpr3d', 'demo', panel])
@@ -116,7 +129,7 @@ def smoke(wheel, contents):
             target.parent.mkdir(parents=True, exist_ok=True)
             with target.open('xb') as stream:
                 stream.write(data)
-        run([python, '-c', 'import cvpr3d; from pathlib import Path; assert Path(cvpr3d.__file__).resolve().is_relative_to(Path.cwd())'], source)
+        run([python, '-c', IMPORT_ORIGIN_CHECK, source], source)
         result = run([python, '-m', 'unittest', 'discover', '-s', 'tests', '-v'], source)
         return result.stderr
 

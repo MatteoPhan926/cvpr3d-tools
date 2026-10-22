@@ -24,6 +24,10 @@ the installed console command and runs tests from the extracted sdist. It never
 installs dependencies from the network during these smoke tests. Build tooling
 and its initial installation can require network access.
 
+Import checks resolve both the loaded module and its expected directory before
+comparing them, including Windows short-path aliases. They must still reject
+imports from another checkout or installation, even under Python optimization.
+
 `release-files.json` is the reviewed tracked-file inventory. Updating it is a
 publication-scope decision; no recursive archive-directory import is allowed.
 `python scripts/check_repository.py --verify-import` additionally checks the
